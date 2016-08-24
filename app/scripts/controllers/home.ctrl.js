@@ -15,4 +15,5 @@ export default class HomeController {
                 this.users = response.data.items;
             });
     }
+
 }

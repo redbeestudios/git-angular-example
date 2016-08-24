@@ -32,7 +32,13 @@
                     <td>{{user.id}}</td>
                     <td>{{user.login}}</td>
                     <td>{{user.score}}</td>
-                    <td><span class="glyphicon glyphicon-star-empty"></span></td>
+                    <td>
+                        <span
+                            class="glyphicon"
+                            ng-class="{'glyphicon-star': home.userService.isStarred(user.login),
+                                       'glyphicon-star-empty': !home.userService.isStarred(user.login)}">
+
+                        </span></td>
                 </tr>
             </tbody>
         </table>

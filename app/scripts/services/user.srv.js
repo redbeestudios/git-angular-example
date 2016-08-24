@@ -6,6 +6,7 @@ export default class UserService {
     constructor($http){
         this.$http = $http;
         this.BASE_URL = 'https://api.github.com/';
+        this.starredUsers = [];
     }
 
     getUsers(query){
@@ -14,5 +15,15 @@ export default class UserService {
 
     getUser(username) {
         return this.$http.get(this.BASE_URL + 'users/' + username);
+    }
+
+    star(username) {
+        if (!this.isStarred(username)) {
+            this.starredUsers.push(username);
+        }
+    }
+
+    isStarred(username) {
+        return typeof this.starredUsers.find(user => user === username) !== 'undefined';
     }
 }
