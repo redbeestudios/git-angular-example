@@ -11,15 +11,15 @@ let Routes = () => {
         $injector.get('$state').go('home');
       });
 
-      /*$stateProvider
+      $stateProvider
         .state('home', {
           url: '/home',
           views: {
             '': {
               templateUrl: 'views/home.html'
-            },
+            }
           }
-        });*/
+        });
     }];
 
   return routerConfig;
