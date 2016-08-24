@@ -13,7 +13,7 @@ gulp.task('serve', ['compile'], function (done) {
   var proxies = [];
 
   routes['/styles'] = 'dist/styles';
-  routes['/cdn/cdn-'+packageJson.name+'/'] = packageJson.moduleConfig.output + 'cdn-'+packageJson.name;
+  routes['/cdn/cdn-'+packageJson.name+'/'] = packageJson.moduleConfig.output + 'cdn/cdn-'+packageJson.name;
 
   var dependencies = packageJson.jspm.dependencies;
 

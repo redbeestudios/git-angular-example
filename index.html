@@ -1,17 +1,27 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-	<title>Angular 1 - Github</title>
-</head>
+    <head>
+      <meta charset="utf-8">
+      <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+      <title>Angular 1 - Github</title>
+    </head>
     <body ng-cloak>
-      <ui-view></ui-view>
-      <script src="jspm_packages/system.js"></script>
-      <script src="config.js"></script>
-      <script>
-        System.import('app/app').then(function() {
-          System.import('styles/layout.css!css');
-        });
-      </script>
+        <div id="header" class="col-md-12">
+            <div class="container">
+                <a href="#"><img src="cdn/cdn-git-angular-example/images/git-loho.png"></a>
+            </div>
+        </div>
+        <ui-view></ui-view>
+        <script src="jspm_packages/system.js"></script>
+        <script src="config.js"></script>
+        <script>
+            System.import('app/app').then(function() {
+              System.import('styles/layout.css!css');
+            });
+        </script>
 	</body>
 </html>
