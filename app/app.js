@@ -8,11 +8,13 @@ import 'angular-messages';
 
 import 'bower:angular-bootstrap@0.13.4';
 
-import Routes from './scripts/config/router.cfg.js';
+import Routes from './scripts/config/router.cfg';
+
+import UserService from './scripts/services/user.srv';
 
 import './templates';
 
-var app = angular.module('todo.list.app',
+var app = angular.module('git.app',
   [
     'ui.router',
     'git-angular-example-templates',
@@ -31,7 +33,7 @@ System.import('jquery').then(function () {
 app.run();
 
 app
-  .config(Routes());
-
+  .config(Routes())
+  .service('userService', UserService);
 
 export default app;
