@@ -12,6 +12,8 @@ import Routes from './scripts/config/router.cfg';
 
 import UserService from './scripts/services/user.srv';
 
+import MyProfileDirective from './scripts/directives/my.profile.dir';
+
 import './templates';
 
 var app = angular.module('git.app',
@@ -34,6 +36,7 @@ app.run();
 
 app
   .config(Routes())
-  .service('userService', UserService);
+  .service('userService', UserService)
+  .directive('myProfileDirective', MyProfileDirective.directiveFactory);
 
 export default app;

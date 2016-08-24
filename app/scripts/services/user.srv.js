@@ -11,4 +11,8 @@ export default class UserService {
     getUsers(query){
         return this.$http.get(this.BASE_URL + 'search/users', { params: {q: query}});
     }
+
+    getUser(username) {
+        return this.$http.get(this.BASE_URL + 'users/' + username);
+    }
 }
