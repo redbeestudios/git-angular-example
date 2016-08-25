@@ -7,7 +7,6 @@ let Routes = () => {
     '$urlRouterProvider',
     ($stateProvider, $urlRouterProvider) => {
 
-      /*
       $urlRouterProvider.otherwise(($injector)=> {
         $injector.get('$state').go('home');
       });
@@ -21,7 +20,6 @@ let Routes = () => {
             }
           }
         });
-       */
     }];
 
   return routerConfig;
