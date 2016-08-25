@@ -9,7 +9,7 @@ export default class HomeController {
     findUser() {
         this.userService
             .getUsers(this.query)
-            .then(response => { this.users = response.data.items; })
+            .then(response => { this.users = response.data.items; });
     }
 
 }

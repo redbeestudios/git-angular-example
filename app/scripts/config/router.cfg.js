@@ -1,6 +1,7 @@
 'use strict';
 
 import HomeController from '../controllers/home.ctrl';
+import DetailController from '../controllers/detail.ctrl';
 
 let Routes = () => {
 
@@ -15,7 +16,7 @@ let Routes = () => {
 
       $stateProvider
         .state('home', {
-          url: '/home',
+          url: '/users',
           views: {
             '': {
               controller: HomeController,
@@ -23,7 +24,17 @@ let Routes = () => {
               templateUrl: 'views/home.html'
             }
           }
-        });
+        })
+      .state('detail', {
+        url: '/users/:id',
+        views: {
+          '': {
+            controller: DetailController,
+            controllerAs: 'detail',
+            templateUrl: 'views/detail.html'
+          }
+        }
+      });
     }];
 
   return routerConfig;

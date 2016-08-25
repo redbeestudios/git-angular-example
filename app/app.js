@@ -12,6 +12,8 @@ import Routes from './scripts/config/router.cfg.js';
 
 import UserService from './scripts/services/user.srv';
 
+import MyProfileDirective from './scripts/directives/my.profile.dir';
+
 import './templates';
 
 var app = angular.module('todo.list.app',
@@ -34,7 +36,8 @@ app.run();
 
 app
   .config(Routes())
-  .service('userService', UserService);
+  .service('userService', UserService)
+  .directive('myProfileDirective', MyProfileDirective.directiveFactory);
 
 
 export default app;
