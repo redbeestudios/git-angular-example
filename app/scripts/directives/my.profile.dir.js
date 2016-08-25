@@ -2,6 +2,11 @@
 
 export default class MyProfileController {
 
+    /*@ngInject*/
+    constructor(userService) {
+        this.userService = userService;
+    }
+
 }
 
 export default class MyProfileDirective {

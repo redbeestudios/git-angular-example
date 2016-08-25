@@ -6,7 +6,11 @@
 
     <div class="col-md-12">
         <div class="input-group">
-            <input type="text" class="form-control lg-input" placeholder="Busc&aacute; un usuario!" ng-model="home.query">
+            <input
+                    class="form-control input-lg"
+                    ng-model="home.query"
+                    type="text"
+                    placeholder="B&uacute;scate en github!">
             <div class="input-group-addon" ng-click="home.findUser()">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </div>
@@ -16,21 +20,27 @@
     <div class="col-md-12">
         <table class="table">
             <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Usuario</th>
-                    <th>Puntaje</th>
-                    <th><span class="glyphicon glyphicon-star-empty"></span></th>
-                </tr>
+            <tr>
+                <th>#</th>
+                <th>Usuario</th>
+                <th>Puntaje</th>
+                <th><span class="glyphicon glyphicon-star-empty"></span></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="user in home.users" ui-sref="detail({id:user.login})">
-                    <td>{{user.id}}</td>
-                    <td>{{user.login}}</td>
-                    <td>{{user.score}}</td>
-                    <td><span class="glyphicon glyphicon-star-empty"></span></td>
-                </tr>
+            <tr ng-repeat="user in home.users" ui-sref="detail({id:user.login})">
+                <td>{{user.id}}</td>
+                <td>{{user.login}}</td>
+                <td>{{user.score}}</td>
+                <td><span
+                        class="glyphicon"
+                        ng-class="{'glyphicon-star': home.userService.isStarred(user.login),
+                                       'glyphicon-star-empty': !home.userService.isStarred(user.login)}">
+
+                        </span></td>
+            </tr>
             </tbody>
         </table>
     </div>
+
 </div>
