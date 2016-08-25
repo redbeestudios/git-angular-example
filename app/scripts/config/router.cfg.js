@@ -1,5 +1,7 @@
 'use strict';
 
+import HomeController from '../controllers/home.ctrl';
+
 let Routes = () => {
 
   let routerConfig = [
@@ -16,6 +18,8 @@ let Routes = () => {
           url: '/home',
           views: {
             '': {
+              controller: HomeController,
+              controllerAs: 'home',
               templateUrl: 'views/home.html'
             }
           }
