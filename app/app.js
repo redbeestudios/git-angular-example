@@ -10,6 +10,8 @@ import 'bower:angular-bootstrap@0.13.4';
 
 import Routes from './scripts/config/router.cfg.js';
 
+import UserService from './scripts/services/user.srv';
+
 import './templates';
 
 var app = angular.module('todo.list.app',
@@ -31,7 +33,8 @@ System.import('jquery').then(function () {
 app.run();
 
 app
-  .config(Routes());
+  .config(Routes())
+  .service('userService', UserService);
 
 
 export default app;
